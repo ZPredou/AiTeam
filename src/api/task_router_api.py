@@ -4,9 +4,14 @@ Task Router API - Provides HTTP endpoints for routing tasks to team members
 """
 import json
 import sys
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from task_router import load_team_config, route_task
+
+# Add the src directory to the Python path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from core.task_router import load_team_config, route_task
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -132,7 +137,7 @@ def health_check():
 
 if __name__ == '__main__':
     print("🚀 Starting Task Router API...")
-    print("📡 API will be available at: http://localhost:5000")
+    print("📡 API will be available at: http://localhost:5002")
     print("🔗 Use POST /route_task to route tasks")
     print("💡 Use GET /health for health check")
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5002)

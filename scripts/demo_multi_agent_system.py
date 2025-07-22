@@ -8,7 +8,13 @@ and shows the results of processing tasks with different approaches.
 
 import asyncio
 import json
-from agent_architecture_manager import AgentArchitectureManager
+import sys
+import os
+
+# Add the src directory to the Python path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+
+from core.agent_architecture_manager import AgentArchitectureManager
 
 async def demo_sequential_pipeline():
     """Demo the sequential pipeline architecture"""

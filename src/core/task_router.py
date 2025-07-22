@@ -1,12 +1,23 @@
 import json
+import os
 
 # Load team config
-def load_team_config(path="ai_dev_team_config.json"):
+def load_team_config(path=None):
+    if path is None:
+        # Get the absolute path to the config file
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(os.path.dirname(current_dir))
+        path = os.path.join(project_root, "config", "ai_dev_team_config.json")
     with open(path, "r") as f:
         return json.load(f)["members"]
 
 # Load a task
-def load_task(path="tasks.json", task_id=None):
+def load_task(path=None, task_id=None):
+    if path is None:
+        # Get the absolute path to the config file
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(os.path.dirname(current_dir))
+        path = os.path.join(project_root, "config", "tasks.json")
     with open(path, "r") as f:
         data = json.load(f)
     

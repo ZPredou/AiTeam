@@ -8,10 +8,16 @@ You can easily switch between different agent interaction architectures.
 
 import json
 import asyncio
+import sys
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from agent_architecture_manager import AgentArchitectureManager
-from task_router import load_team_config
+
+# Add the src directory to the Python path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from core.agent_architecture_manager import AgentArchitectureManager
+from core.task_router import load_team_config
 
 app = Flask(__name__)
 CORS(app)

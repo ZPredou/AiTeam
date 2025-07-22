@@ -22,9 +22,13 @@ from dataclasses import dataclass
 from datetime import datetime
 
 # Import the different architectures
-from agent_architectures.sequential_pipeline import create_sequential_pipeline
-from agent_architectures.round_table_discussion import create_round_table_discussion
-from agent_architectures.event_driven_reactive import create_reactive_agent_system
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from architectures.sequential_pipeline import create_sequential_pipeline
+from architectures.round_table_discussion import create_round_table_discussion
+from architectures.event_driven_reactive import create_reactive_agent_system
 
 class ArchitectureType(Enum):
     SEQUENTIAL = "sequential"
@@ -42,7 +46,12 @@ class ProcessingResult:
     metadata: Dict[str, Any]
 
 class AgentArchitectureManager:
-    def __init__(self, team_config_path: str = "ai_dev_team_config.json"):
+    def __init__(self, team_config_path: str = None):
+        if team_config_path is None:
+            # Get the absolute path to the config file
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            project_root = os.path.dirname(os.path.dirname(current_dir))
+            team_config_path = os.path.join(project_root, "config", "ai_dev_team_config.json")
         self.team_config_path = team_config_path
         self.current_architecture = ArchitectureType.SEQUENTIAL  # Default
         self.architecture_instances = {}

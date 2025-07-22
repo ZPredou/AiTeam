@@ -16,7 +16,7 @@ import os
 
 # Add parent directory to path to import ai_providers
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from ai_providers import create_ai_provider_manager
+from core.ai_providers import create_ai_provider_manager
 
 @dataclass
 class DiscussionRound:

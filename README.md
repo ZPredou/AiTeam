@@ -24,25 +24,72 @@ A flexible system for creating AI agents that interact with each other using dif
 - **Best for**: Complex decisions with clear authority levels
 - **Use case**: Enterprise-level project governance
 
+## 📁 Project Structure
+
+```
+AiTeam/
+├── README.md
+├── requirements.txt
+├── config/                    # Configuration files
+│   ├── ai_config.json
+│   ├── ai_dev_team_config.json
+│   └── tasks.json
+├── src/                       # Source code
+│   ├── core/                  # Core modules
+│   │   ├── agent_architecture_manager.py
+│   │   ├── ai_providers.py
+│   │   └── task_router.py
+│   ├── architectures/         # Agent architectures
+│   │   ├── event_driven_reactive.py
+│   │   ├── hierarchical_decision_tree.py
+│   │   ├── round_table_discussion.py
+│   │   └── sequential_pipeline.py
+│   └── api/                   # API endpoints
+│       ├── multi_agent_api.py
+│       └── task_router_api.py
+├── frontend/                  # Web interface
+│   ├── index.html
+│   ├── script.js
+│   ├── styles.css
+│   └── data/                  # Frontend data files
+│       ├── ai_dev_team_config.json
+│       └── backlog.json
+├── scripts/                   # Utility scripts
+│   ├── demo_multi_agent_system.py
+│   ├── setup_ai_providers.py
+│   └── show_detailed_responses.py
+└── tests/                     # Test files
+    ├── test_ai_integration.py
+    ├── test_architectures.py
+    ├── test_improved_fallbacks.py
+    └── test_openai_integration.py
+```
+
 ## 🚀 Quick Start
 
 ### 1. Install Dependencies
 ```bash
-pip install flask flask-cors
+pip install -r requirements.txt
 ```
 
-### 2. Start the Multi-Agent API
+### 2. Start the APIs
 ```bash
-python multi_agent_api.py
-```
-The API will be available at `http://localhost:5001`
+# Start Multi-Agent API (port 5001)
+cd src/api && python3 multi_agent_api.py
 
-### 3. Open the Web Interface
-Open `ai_backlog_viewer/index.html` in your browser
+# Start Task Router API (port 5002)
+cd src/api && python3 task_router_api.py
+```
+
+### 3. Start the Frontend
+```bash
+cd frontend && python3 -m http.server 8080
+```
+Then open `http://localhost:8080` in your browser
 
 ### 4. Try the Demo
 ```bash
-python demo_multi_agent_system.py
+python3 scripts/demo_multi_agent_system.py
 ```
 
 ## 🎮 How to Use

@@ -19,7 +19,7 @@ let availableArchitectures = {};
 // Load team configuration
 async function loadTeamConfig() {
   try {
-    const response = await fetch('../ai_dev_team_config.json');
+    const response = await fetch('data/ai_dev_team_config.json');
     teamConfig = await response.json();
 
     // Load available architectures
@@ -396,7 +396,7 @@ function createAssignmentSection(story) {
 }
 
 async function loadBacklog() {
-  const response = await fetch('backlog.json');
+  const response = await fetch('data/backlog.json');
   const data = await response.json();
 
   // Store the data globally so we can access it for prompt generation
