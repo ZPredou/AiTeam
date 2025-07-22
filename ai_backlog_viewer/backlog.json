@@ -1,0 +1,82 @@
+{
+  "product_name": "AI Assistant Web App",
+  "epics": [
+    {
+      "id": "epic-ui",
+      "title": "User Interface",
+      "description": "Design and build the Angular front-end layout for the AI Assistant.",
+      "stories": [
+        {
+          "id": "story-ui-001",
+          "title": "Design chat interface layout",
+          "description": "Sketch a responsive UI for the chat interface using Angular Material.",
+          "priority": "High",
+          "status": "Ready"
+        },
+        {
+          "id": "story-ui-002",
+          "title": "Implement chat input component",
+          "description": "Build the input box with send button, support for 'Enter to send'.",
+          "priority": "High",
+          "status": "To Do"
+        },
+        {
+          "id": "story-ui-003",
+          "title": "Render chat messages dynamically",
+          "description": "Display incoming/outgoing messages in a scrollable view.",
+          "priority": "Medium",
+          "status": "To Do"
+        }
+      ]
+    },
+    {
+      "id": "epic-api",
+      "title": "Backend Integration",
+      "description": "Connect the frontend to the AI backend (e.g., via REST or WebSockets).",
+      "stories": [
+        {
+          "id": "story-api-001",
+          "title": "Setup environment configuration",
+          "description": "Manage API base URL and secrets via Angular environments.",
+          "priority": "High",
+          "status": "Done"
+        },
+        {
+          "id": "story-api-002",
+          "title": "Send user prompt to backend",
+          "description": "Create a service to send messages to the AI backend.",
+          "priority": "High",
+          "status": "In Progress"
+        },
+        {
+          "id": "story-api-003",
+          "title": "Display AI response in UI",
+          "description": "Update UI component when the AI response is received.",
+          "priority": "High",
+          "status": "To Do"
+        }
+      ]
+    },
+    {
+      "id": "epic-testing",
+      "title": "Testing & QA",
+      "description": "Ensure the UI and backend integration are robust through unit and E2E tests.",
+      "stories": [
+        {
+          "id": "story-test-001",
+          "title": "Write unit tests for chat component",
+          "description": "Use Jasmine/Karma to write tests for input/output logic.",
+          "priority": "Medium",
+          "status": "To Do"
+        },
+        {
+          "id": "story-test-002",
+          "title": "Create end-to-end test with Cypress",
+          "description": "Test full interaction flow from message input to AI reply.",
+          "priority": "Medium",
+          "status": "To Do"
+        }
+      ]
+    }
+  ]
+}

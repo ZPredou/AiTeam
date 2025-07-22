@@ -1,0 +1,68 @@
+{
+  "tasks": [
+    {
+      "task_id": "T-1001",
+      "assigned_to": "tech_lead",
+      "title": "Review architecture for AI chat interface",
+      "description": "Evaluate the proposed architecture for the user-facing AI chat interface. Consider scalability, maintainability, and API strategy.",
+      "context_files": ["specs/chat_interface.md", "diagrams/arch_overview.png"],
+      "related_story": "story-ui-001"
+    },
+    {
+      "task_id": "T-1002",
+      "assigned_to": "product_owner",
+      "title": "Define MVP features for AI assistant",
+      "description": "Create a prioritized list of MVP features for the AI assistant, based on user research and business goals.",
+      "context_files": ["docs/user_feedback.csv", "strategy/product_vision.md"],
+      "related_story": "story-ui-001"
+    },
+    {
+      "task_id": "T-1003",
+      "assigned_to": "qa_engineer",
+      "title": "Write test plan for chat module",
+      "description": "Draft manual and automated test cases for the new chat interface. Include edge cases and regression tests.",
+      "context_files": ["specs/chat_interface.md"],
+      "related_story": "story-test-001"
+    },
+    {
+      "task_id": "T-1004",
+      "assigned_to": "developer_1",
+      "title": "Implement chat input component",
+      "description": "Build the Angular chat input component with send button and Enter key support using Angular Material.",
+      "context_files": ["specs/chat_interface.md"],
+      "related_story": "story-ui-002"
+    },
+    {
+      "task_id": "T-1005",
+      "assigned_to": "developer_1",
+      "title": "Create dynamic message rendering",
+      "description": "Implement scrollable chat view that displays incoming and outgoing messages dynamically.",
+      "context_files": ["specs/chat_interface.md"],
+      "related_story": "story-ui-003"
+    },
+    {
+      "task_id": "T-1006",
+      "assigned_to": "developer_2",
+      "title": "Complete backend service integration",
+      "description": "Finish the Angular service to send user messages to the AI backend API.",
+      "context_files": ["api/backend_spec.md"],
+      "related_story": "story-api-002"
+    },
+    {
+      "task_id": "T-1007",
+      "assigned_to": "developer_1",
+      "title": "Display AI responses in UI",
+      "description": "Update chat component to handle and display AI responses when received from backend.",
+      "context_files": ["specs/chat_interface.md"],
+      "related_story": "story-api-003"
+    },
+    {
+      "task_id": "T-1008",
+      "assigned_to": "qa_engineer",
+      "title": "Create Cypress E2E tests",
+      "description": "Implement end-to-end tests covering the full chat interaction flow from input to AI response.",
+      "context_files": ["specs/chat_interface.md"],
+      "related_story": "story-test-002"
+    }
+  ]
+}
